@@ -1,0 +1,2440 @@
+<?php
+?>
+<!DOCTYPE html>
+<html>
+<!--<![endif]-->
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
+
+  <link rel="stylesheet" type="text/css" data-them="" href="myStyles/bootstrap.min.css">
+  <script src="myStyles/jquery-2.1.1.min.js"></script>
+  <link rel="stylesheet" data-them="" href="myStyles/styles-green.css">
+  <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet"
+        integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+
+  <title>SalesRobot Campaign</title>
+  <link href="http://salesrobot.com/sales/images/favicon.png" rel="shortcut icon" type="image/png" />
+  <meta name="description" content="">
+  <link rel="stylesheet" data-them="" href="myStyles/mass_email.css">
+  <link rel="stylesheet" data-them="" href="myStyles/spectrum.css">
+  <link rel="stylesheet" data-them="" href="myStyles/bootstrap-switch.min.css">
+
+
+  <script src="https://cdn.tinymce.com/4.8/tinymce.min.js"></script>
+  <script src="myStyles/tinymce_script.js"></script>
+  <!--<script>-->
+  <!--tinymce.init({-->
+  <!--selector:"#img-tinymce",-->
+  <!--forced_root_block: '',-->
+  <!--setup: function(editor) {-->
+  <!--editor.on('blur', function(){-->
+  <!--if(!catching){-->
+  <!--bounceProtect('blur');-->
+  <!--let m_id = $("#img-tinymce").attr("data-id");-->
+  <!--setMyContentImg(m_id);-->
+  <!--}-->
+  <!--})-->
+  <!--},-->
+  <!--height: "115",-->
+  <!--width: "115",-->
+  <!--visual : false,-->
+  <!--image_dimensions: false,-->
+  <!--image_description: false,-->
+  <!--toolbar: "image |",-->
+  <!--plugins: [-->
+  <!--"image imagetools media fullscreen advlist autolink lists link image imagetools charmap print preview anchor"-->
+  <!--],-->
+  <!--menubar: false,-->
+  <!--statusbar: false,-->
+  <!--convert_urls: false,-->
+  <!--file_picker_callback: elFinderBrowser-->
+  <!--});-->
+  <!--tinymce.init({-->
+  <!--selector:"#img-tinymce-second",-->
+  <!--forced_root_block: '',-->
+  <!--setup: function(editor) {-->
+  <!--editor.on('blur', function(){-->
+  <!--if(!catching){-->
+  <!--bounceProtect('blur');-->
+  <!--let m_id = $("#img-tinymce-second").attr("data-id");-->
+  <!--setMyContentImg2(m_id);-->
+  <!--}-->
+  <!--})-->
+  <!--},-->
+  <!--height: "115",-->
+  <!--width: "115",-->
+  <!--visual : false,-->
+  <!--image_dimensions: false,-->
+  <!--image_description: false,-->
+  <!--toolbar: "image |",-->
+  <!--plugins: [-->
+  <!--"image imagetools media fullscreen advlist autolink lists link image imagetools charmap print preview anchor"-->
+  <!--],-->
+  <!--menubar: false,-->
+  <!--statusbar: false,-->
+  <!--convert_urls: false,-->
+  <!--file_picker_callback: elFinderBrowser-->
+  <!--});-->
+  <!--tinymce.init({-->
+  <!--selector:"#m-tinymce",-->
+  <!--forced_root_block: '',-->
+  <!--setup: function(editor) {-->
+  <!--editor.on('blur', function(){-->
+  <!--if(!catching){-->
+  <!--bounceProtect('blur');-->
+  <!--let m_id = $("#m-tinymce").attr("data-id");-->
+  <!--setMyContent(m_id);-->
+  <!--}-->
+  <!--})-->
+  <!--},-->
+  <!--visual : false,-->
+  <!--toolbar: "undo redo | subscript superscript | fontselect fontsizeselect | bold italic underline | forecolor backcolor | bullist numlist | link |",-->
+  <!--plugins: [-->
+  <!--"advlist autolink lists link image imagetools charmap print preview anchor",-->
+  <!--"searchreplace visualblocks code fullscreen",-->
+  <!--"insertdatetime media table contextmenu paste",-->
+  <!--"textcolor colorpicker",-->
+  <!--"image imagetools",-->
+  <!--"noneditable",-->
+  <!--"autoresize"-->
+  <!--],-->
+  <!--menubar: false,-->
+  <!--statusbar: false,-->
+  <!--convert_urls: false,-->
+  <!--file_picker_callback: elFinderBrowser-->
+  <!--});-->
+  <!--tinymce.init({-->
+  <!--selector:"#m-tinymce-second",-->
+  <!--forced_root_block: '',-->
+  <!--setup: function(editor) {-->
+  <!--editor.on('blur', function(){-->
+  <!--if(!catching){-->
+  <!--bounceProtect('blur');-->
+  <!--let m_id = $("#m-tinymce-second").attr("data-id");-->
+  <!--setMyContent2(m_id);-->
+  <!--}-->
+  <!--})-->
+  <!--},-->
+  <!--visual : false,-->
+  <!--toolbar: "undo redo | subscript superscript | fontselect fontsizeselect | bold italic underline | forecolor backcolor | bullist numlist | link |",-->
+  <!--plugins: [-->
+  <!--"advlist autolink lists link image imagetools charmap print preview anchor",-->
+  <!--"searchreplace visualblocks code fullscreen",-->
+  <!--"insertdatetime media table contextmenu paste",-->
+  <!--"textcolor colorpicker",-->
+  <!--"image imagetools",-->
+  <!--"noneditable",-->
+  <!--"autoresize"-->
+  <!--],-->
+  <!--menubar: false,-->
+  <!--statusbar: false,-->
+  <!--convert_urls: false,-->
+  <!--file_picker_callback: elFinderBrowser-->
+  <!--});-->
+
+  <!--let catching = false;-->
+
+  <!--function bounceProtect(src)-->
+  <!--{-->
+  <!--catching = true;-->
+  <!--setTimeout(function(){ catching = false;}, 250);-->
+  <!--}-->
+
+  <!--function setMyContent(m_id) {-->
+  <!--document.getElementById('right-text-content-'+m_id).innerHTML = tinymce.get('m-tinymce').getContent();-->
+  <!--}-->
+  <!--function setMyContentImg(m_id) {-->
+  <!--document.getElementById('right-img-content-'+m_id).innerHTML = tinymce.get('img-tinymce').getContent();-->
+  <!--}-->
+
+  <!--function setMyContent2(m_id) {-->
+  <!--document.getElementById('left-text-content-'+m_id).innerHTML = tinymce.get('m-tinymce-second').getContent();-->
+  <!--}-->
+  <!--function setMyContentImg2(m_id) {-->
+  <!--document.getElementById('left-img-content-'+m_id).innerHTML = tinymce.get('img-tinymce-second').getContent();-->
+  <!--}-->
+
+  <!--function elFinderBrowser (callback, value, meta) {-->
+  <!--tinymce.activeEditor.windowManager.open({-->
+  <!--file: 'elfinder/elfinder.html',// use an absolute path!-->
+  <!--title: 'Upload an Image',-->
+  <!--width: 900,-->
+  <!--height: 450,-->
+  <!--resizable: 'yes'-->
+  <!--}, {-->
+  <!--oninsert: function (file, fm) {-->
+  <!--var url, reg, info;-->
+
+  <!--// URL normalization-->
+  <!--url = fm.convAbsUrl(file.url);-->
+
+  <!--// Make file info-->
+  <!--info = file.name + ' (' + fm.formatSize(file.size) + ')';-->
+
+  <!--// Provide file and text for the link dialog-->
+  <!--if (meta.filetype == 'file') {-->
+  <!--callback(url);-->
+  <!--}-->
+
+  <!--// Provide image and alt text for the image dialog-->
+  <!--if (meta.filetype == 'image') {-->
+  <!--callback(url, {alt: info});-->
+  <!--}-->
+
+  <!--// Provide alternative source and posted for the media dialog-->
+  <!--if (meta.filetype == 'media') {-->
+  <!--callback(url);-->
+  <!--}-->
+  <!--}-->
+  <!--});-->
+  <!--return false;-->
+  <!--}-->
+  <!--</script>-->
+
+  <style type="text/css">
+    #outlook a { padding:0; }
+    .ReadMsgBody { width:100%; }
+    .ExternalClass { width:100%; }
+    .ExternalClass * { line-height:100%; }
+    body { margin:0;padding:0;-webkit-text-size-adjust:100%;-ms-text-size-adjust:100%; }
+    table, td { border-collapse:collapse;mso-table-lspace:0pt;mso-table-rspace:0pt; }
+    img { border:0;height:auto;line-height:100%; outline:none;text-decoration:none;-ms-interpolation-mode:bicubic; }
+    p { display:block;margin:13px 0; }
+  </style>
+  <!--[if !mso]><!-->
+  <style type="text/css">
+    @media only screen and (max-width:480px) {
+      @-ms-viewport { width:320px; }
+      @viewport { width:320px; }
+    }
+  </style>
+  <!--<![endif]-->
+  <!--[if mso]>
+  <xml>
+    <o:OfficeDocumentSettings>
+      <o:AllowPNG/>
+      <o:PixelsPerInch>96</o:PixelsPerInch>
+    </o:OfficeDocumentSettings>
+  </xml>
+  <![endif]-->
+  <!--[if lte mso 11]>
+  <style type="text/css">
+    .outlook-group-fix { width:100% !important; }
+  </style>
+  <![endif]-->
+
+  <!--[if !mso]><!-->
+  <link href="https://fonts.googleapis.com/css?family=Ubuntu:300,400,500,700" rel="stylesheet" type="text/css">
+  <style type="text/css">
+    @import url(https://fonts.googleapis.com/css?family=Ubuntu:300,400,500,700);
+  </style>
+  <!--<![endif]-->
+
+
+
+  <style type="text/css">
+    @media only screen and (min-width:480px) {
+      .mj-column-per-100 { width:100% !important; max-width: 100%; }
+      .mj-column-per-50 { width:50% !important; max-width: 50%; }
+      .mj-column-per-30 { width:30% !important; max-width: 30%; }
+      .mj-column-per-70 { width:70% !important; max-width: 70%; }
+      .mj-column-per-20 { width:20% !important; max-width: 20%; }
+      .mj-column-per-60 { width:60% !important; max-width: 60%; }
+      .mj-column-per-80 { width:80% !important; max-width: 80%; }
+    }
+  </style>
+
+
+  <style type="text/css">
+
+
+
+    @media only screen and (max-width:480px) {
+      table.full-width-mobile { width: 100% !important; }
+      td.full-width-mobile { width: auto !important; }
+    }
+
+  </style>
+  <style type="text/css"></style>
+</head>
+
+<body class="responsive " id="demo-green">
+
+<!-- LOADING -->
+<div class="all_content">
+  <div class="dima-main" style="float:none;">
+    <section>
+      <div class="col-md-12 ">
+        <div class="col-md-2" style="padding: 30px 10px 10px 10px;">
+          <h2 class="hidden"></h2>
+          <h3 class="hidden"></h3>
+          <h4 class="hidden"></h4>
+
+          <h5 style="text-align: left;color: #828077 !important;">ELEMENTS</h5>
+          <div style="padding: 0px 28px 0px 28px;">
+            <table width="100%">
+              <tr>
+                <td colspan="3" align="center">
+                  Basic
+                  <div class="clear"></div>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <div class="div-element draggable-text" id="drag-text"
+                       style="text-align: center;background: white;border: 2px solid #ccc;border-radius: 5px;">
+                    <img class="text-element-img" src="icons/text.png" alt="text icon element">
+                  </div>
+                </td>
+                <td>
+                  &nbsp;&nbsp;&nbsp;
+                </td>
+                <td>
+                  <div class="div-element draggable-img" id="drag-img"
+                       style="text-align: center;background: white;border: 2px solid #ccc;border-radius: 5px;">
+                    <img class="img-element-img" src="icons/img.png" alt="img icon element">
+                  </div>
+                  <br>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <div class="div-element draggable-left" id="drag-left"
+                       style="text-align: center;background: white;border: 2px solid #ccc;border-radius: 5px;">
+                    <img class="left-element-img" src="icons/left.png" alt="left icon element">
+                  </div>
+                </td>
+                <td>
+                  &nbsp;&nbsp;&nbsp;
+                </td>
+                <td>
+                  <div class="div-element draggable-right" id="drag-right"
+                       style="text-align: center;background: white;border: 2px solid #ccc;border-radius: 5px;">
+                    <img class="right-element-img" src="icons/right.png" alt="right icon element">
+                  </div>
+                  <br>
+                </td>
+              </tr>
+            </table>
+          </div>
+          <div class="clear"></div>
+          <div style="padding: 0px 28px 0px 28px">
+            <table width="100%">
+              <tr>
+                <td colspan="3" align="center">
+                  Structure
+                  <div class="clear"></div>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <div class="div-element draggable-divider" id="drag-divider"
+                       style="text-align: center;background: white;border: 2px solid #ccc;border-radius: 5px;">
+                    <img class="divider-element-img" src="icons/divider.png" alt="divider icon element">
+                  </div>
+                </td>
+                <td>
+                  &nbsp;&nbsp;&nbsp;
+                </td>
+                <td>
+                  <div class="div-element draggable-btn" id="drag-btn"
+                       style="text-align: center;background: white;border: 2px solid #ccc;border-radius: 5px;">
+                    <img class="btn-element-img" src="icons/btn.png" alt="btn icon element">
+                  </div>
+                  <br>
+                </td>
+              </tr>
+            </table>
+          </div>
+          <br>
+          <br>
+        </div>
+        <div class="col-md-9" id="tag-id">
+          <div style="margin-top: 2em;border: 1px solid #5BC0DE;box-shadow: 0px 1px 3px 0px #888888;background: #5BC0DE;padding: 12px 10px 12px 10px;color: white;border-radius: 8px 8px 0px 0px;" id="tag-id">
+            <nav role="navigation" class="clearfix">
+              <!-- menu content -->
+              <ul class="dima-menu sf-menu">
+                <li class="sub-icon" style="font-size: 18px;float: left;padding: 10px;">
+                  <!--                  kim-->
+                  <p style="padding: 0;margin: 0;float: left;" class="my-title">Untitled Mailing</p><a id="edit-title" onclick="title_dialog(this)" data-toggle="modal" style="color: black;margin-left: 5px;"><i class="fa fa-pencil"></i></a>
+                  <div class="modal fade title-modal" role="dialog">
+                    <div class="modal-dialog modal-sm">
+
+                      <!-- kim Modal content-->
+                      <div class="modal-content">
+                        <div class="modal-header">
+                          <button type="button" class="close" data-dismiss="modal">&times;</button>
+                          <h4 class="modal-title">Template Name</h4>
+                        </div>
+                        <div class="modal-body">
+                          <input type="hidden" name="div-id-btn_" id="div-id-btn_" value="">
+                          <div class="clear"></div>
+                          <div class="">
+                            <div class="accordion">
+                              <div class="accordion-section">
+                                <div class="accordion-section-title">
+                                  <table class="table" style="margin-bottom: -13px !important;margin-top: -13px !important;">
+                                    <tbody>
+                                    <tr>
+                                      <td style="width:30%;border: none !important;padding: 13px 0px 0px 0px;">
+                                        Text
+                                      </td>
+                                      <td style="width:70%;border: none !important;">
+                                        <div>
+                                          <input type="text" name="btn_text" class="btn_text-title" style="background: white !important">
+                                        </div>
+                                      </td>
+                                    </tr>
+                                    </tbody>
+                                  </table>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="modal-footer">
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </li>
+              </ul>
+              <!-- !menu content -->
+            </nav>
+          </div>
+          <div id="w-template" class="col-md-12"
+               style="border: 1px solid #D0CDBC;background: #3b4856;box-shadow: 0px 1px 3px 0px #888888;height: 600px;text-align:center; overflow: auto">
+            <div class=""
+                 style="background: #3b4856;margin-top: 1em; margin-bottom: 1em;padding-top:10px; padding-bottom: 10px;display:inline-block;">
+              <div class="poc-combo-block poc-content-block we" id="tag-id">
+                <div class="poc-content-block-outline" id="tag-id">
+                  <ul class="dima-menu sf-menu" style="float: right;">
+                    <li style="display: flex;" class="actions-icon">
+                      <a onclick="" class="a-icon-edit" data-toggle="modal" id="edit-right" style="padding: 3px 10px 3px 10px;border: 1px solid;border-radius: 0px 0px 6px 6px;"><i class="fa fa-pencil" style="font-size: 20px;"></i></a>
+                    </li>
+                  </ul>
+                </div>
+                <!-- HEADER - TEMPLATE START -->
+
+                <!--[if mso | IE]>
+                <table
+                        align="center" border="0" cellpadding="0" cellspacing="0" class="" style="width:600px;" width="600"
+                >
+                  <tr>
+                    <td style="line-height:0px;font-size:0px;mso-line-height-rule:exactly;">
+                <![endif]-->
+
+
+                <div  style="background:#eeeeee;background-color:#eeeeee;Margin:0px auto;max-width:600px;">
+
+                  <table
+                          align="center" border="0" cellpadding="0" cellspacing="0" role="presentation" style="background:#eeeeee;background-color:#eeeeee;width:100%;"
+                  >
+                    <tbody>
+                    <tr>
+                      <td
+                              style="direction:ltr;font-size:0px;padding:20px 0;text-align:center;vertical-align:top;"
+                      >
+                        <!--[if mso | IE]>
+                        <table role="presentation" border="0" cellpadding="0" cellspacing="0">
+
+                          <tr>
+
+                            <td
+                                    class="" style="width:600px;"
+                            >
+                        <![endif]-->
+
+                        <div
+                                class="mj-column-per-100 outlook-group-fix" style="font-size:0;line-height:0;text-align:left;display:inline-block;width:100%;direction:ltr;"
+                        >
+                          <!--[if mso | IE]>
+                          <table  role="presentation" border="0" cellpadding="0" cellspacing="0">
+                            <tr>
+
+                              <td
+                                      style="vertical-align:top;width:300px;"
+                              >
+                          <![endif]-->
+
+                          <div
+                                  class="mj-column-per-50 outlook-group-fix" style="font-size:13px;text-align:left;direction:ltr;display:inline-block;vertical-align:top;width:50%;"
+                          >
+
+                            <table
+                                    border="0" cellpadding="0" cellspacing="0" role="presentation" style="vertical-align:top;" width="100%"
+                            >
+
+                              <tr>
+                                <td
+                                        align="left" style="font-size:0px;padding:10px 25px;word-break:break-word;"
+                                >
+
+                                  <div
+                                          style="font-family:Ubuntu, Helvetica, Arial, sans-serif;font-size:13px;font-weight:bold;line-height:1;text-align:left;color:#696969;"
+                                  >
+                                    The Week's Top GovCon News Stories
+                                  </div>
+
+                                </td>
+                              </tr>
+
+                            </table>
+
+                          </div>
+
+                          <!--[if mso | IE]>
+                          </td>
+
+                          <td
+                                  style="vertical-align:top;width:300px;"
+                          >
+                          <![endif]-->
+
+                          <div
+                                  class="mj-column-per-50 outlook-group-fix" style="font-size:13px;text-align:left;direction:ltr;display:inline-block;vertical-align:top;width:50%;"
+                          >
+
+                            <table
+                                    border="0" cellpadding="0" cellspacing="0" role="presentation" style="vertical-align:top;" width="100%"
+                            >
+
+                              <tr>
+                                <td
+                                        align="right" style="font-size:0px;padding:10px 25px;word-break:break-word;"
+                                >
+
+                                  <div
+                                          style="font-family:Ubuntu, Helvetica, Arial, sans-serif;font-size:13px;line-height:1;text-align:right;color:#000000;"
+                                  >
+                                    <a href="#" style="color:#1e90ff;text-decoration:none;">[VIEWBROWSER]</a>
+                                  </div>
+
+                                </td>
+                              </tr>
+
+                            </table>
+
+                          </div>
+
+                          <!--[if mso | IE]>
+                          </td>
+
+                          </tr>
+                          </table>
+                          <![endif]-->
+                        </div>
+
+                        <!--[if mso | IE]>
+                        </td>
+
+                        </tr>
+
+                        </table>
+                        <![endif]-->
+                      </td>
+                    </tr>
+                    </tbody>
+                  </table>
+
+                </div>
+
+
+                <!--[if mso | IE]>
+                </td>
+                </tr>
+                </table>
+
+                <table
+                        align="center" border="0" cellpadding="0" cellspacing="0" class="" style="width:600px;" width="600"
+                >
+                  <tr>
+                    <td style="line-height:0px;font-size:0px;mso-line-height-rule:exactly;">
+                <![endif]-->
+
+
+                <div  style="background:#ffffff;background-color:#ffffff;Margin:0px auto;max-width:600px;">
+
+                  <table
+                          align="center" border="0" cellpadding="0" cellspacing="0" role="presentation" style="background:#ffffff;background-color:#ffffff;width:100%;"
+                  >
+                    <tbody>
+                    <tr>
+                      <td
+                              style="border:7px solid #eeeeee;border-bottom:0px;direction:ltr;font-size:0px;padding:0px;text-align:center;vertical-align:top;"
+                      >
+                        <!--[if mso | IE]>
+                        <table role="presentation" border="0" cellpadding="0" cellspacing="0">
+
+                          <tr>
+
+                            <td
+                                    class="" style="width:600px;"
+                            >
+                        <![endif]-->
+
+                        <div
+                                class="mj-column-per-100 outlook-group-fix" style="font-size:0;line-height:0;text-align:left;display:inline-block;width:100%;direction:ltr;"
+                        >
+                          <!--[if mso | IE]>
+                          <table  role="presentation" border="0" cellpadding="0" cellspacing="0">
+                            <tr>
+
+                              <td
+                                      style="vertical-align:top;width:300px;"
+                              >
+                          <![endif]-->
+
+                          <div
+                                  class="mj-column-per-50 outlook-group-fix" style="font-size:13px;text-align:left;direction:ltr;display:inline-block;vertical-align:top;width:50%;"
+                          >
+
+                            <table
+                                    border="0" cellpadding="0" cellspacing="0" role="presentation" style="vertical-align:top;" width="100%"
+                            >
+
+                              <tr>
+                                <td
+                                        align="center" style="font-size:0px;padding:10px 25px;word-break:break-word;"
+                                >
+
+                                  <table
+                                          align="center" border="0" cellpadding="0" cellspacing="0" role="presentation" style="border-collapse:collapse;border-spacing:0px;"
+                                  >
+                                    <tbody>
+                                    <tr>
+                                      <td  style="width:250px;">
+
+                                        <img
+                                                alt="govcon_wire_weekly_logo" height="auto" src="https://gallery.mailchimp.com/9447c61bfb9058cb4553aedbf/images/865658f8-b047-4e2f-b7dc-f4329b208211.png" style="border:0;display:block;outline:none;text-decoration:none;height:auto;width:100%;" width="250"
+                                        />
+
+                                      </td>
+                                    </tr>
+                                    </tbody>
+                                  </table>
+
+                                </td>
+                              </tr>
+
+                            </table>
+
+                          </div>
+
+                          <!--[if mso | IE]>
+                          </td>
+
+                          <td
+                                  style="vertical-align:top;width:300px;"
+                          >
+                          <![endif]-->
+
+                          <div
+                                  class="mj-column-per-50 outlook-group-fix" style="font-size:13px;text-align:left;direction:ltr;display:inline-block;vertical-align:top;width:50%;"
+                          >
+
+                            <table
+                                    border="0" cellpadding="0" cellspacing="0" role="presentation" style="vertical-align:top;" width="100%"
+                            >
+
+                              <tr>
+                                <td
+                                        align="right" style="font-size:0px;padding:10px 25px;word-break:break-word;"
+                                >
+
+                                  <table
+                                          align="right" border="0" cellpadding="0" cellspacing="0" role="presentation" style="border-collapse:collapse;border-spacing:0px;"
+                                  >
+                                    <tbody>
+                                    <tr>
+                                      <td  style="width:100px;">
+
+                                        <img
+                                                alt="govcon_index" height="auto" src="https://gallery.mailchimp.com/9447c61bfb9058cb4553aedbf/images/9bb8626b-30de-4911-b444-4dbc81c9b6a2.jpg" style="border:0;display:block;outline:none;text-decoration:none;height:auto;width:100%;" width="100"
+                                        />
+
+                                      </td>
+                                    </tr>
+                                    </tbody>
+                                  </table>
+
+                                </td>
+                              </tr>
+
+                            </table>
+
+                          </div>
+
+                          <!--[if mso | IE]>
+                          </td>
+
+                          </tr>
+                          </table>
+                          <![endif]-->
+                        </div>
+
+                        <!--[if mso | IE]>
+                        </td>
+
+                        </tr>
+
+                        </table>
+                        <![endif]-->
+                      </td>
+                    </tr>
+                    </tbody>
+                  </table>
+
+                </div>
+
+
+                <!--[if mso | IE]>
+                </td>
+                </tr>
+                </table>
+
+                <table
+                        align="center" border="0" cellpadding="0" cellspacing="0" class="" style="width:600px;" width="600"
+                >
+                  <tr>
+                    <td style="line-height:0px;font-size:0px;mso-line-height-rule:exactly;">
+                <![endif]-->
+
+
+                <div  style="background:#ffffff;background-color:#ffffff;Margin:0px auto;max-width:600px;">
+
+                  <table
+                          align="center" border="0" cellpadding="0" cellspacing="0" role="presentation" style="background:#ffffff;background-color:#ffffff;width:100%;"
+                  >
+                    <tbody>
+                    <tr>
+                      <td
+                              style="border:7px solid #eeeeee;border-bottom:0px;border-top:0px;direction:ltr;font-size:0px;padding:0px;text-align:center;vertical-align:top;"
+                      >
+                        <!--[if mso | IE]>
+                        <table role="presentation" border="0" cellpadding="0" cellspacing="0">
+
+                          <tr>
+
+                            <td
+                                    class="" style="vertical-align:top;width:600px;"
+                            >
+                        <![endif]-->
+
+                        <div
+                                class="mj-column-per-100 outlook-group-fix" style="font-size:13px;text-align:left;direction:ltr;display:inline-block;vertical-align:top;width:100%;"
+                        >
+
+                          <table
+                                  border="0" cellpadding="0" cellspacing="0" role="presentation" style="vertical-align:top;" width="100%"
+                          >
+
+                            <tr>
+                              <td
+                                      align="right" style="font-size:0px;padding:10px 25px;word-break:break-word;"
+                              >
+
+                                <div
+                                        style="font-family:Ubuntu, Helvetica, Arial, sans-serif;font-size:13px;line-height:1;text-align:right;color:#000000;"
+                                >
+                                  <a href="http://www.govconindex.com/" style="text-decoration:none;color:#1e90ff;font-size:12px;">Click here to see Real-Time GovCon Sector Quotes</a>
+                                </div>
+
+                              </td>
+                            </tr>
+
+                          </table>
+
+                        </div>
+
+                        <!--[if mso | IE]>
+                        </td>
+
+                        </tr>
+
+                        </table>
+                        <![endif]-->
+                      </td>
+                    </tr>
+                    </tbody>
+                  </table>
+
+                </div>
+
+
+                <!--[if mso | IE]>
+                </td>
+                </tr>
+                </table>
+                <table
+                        align="center" border="0" cellpadding="0" cellspacing="0" class="" style="width:600px;" width="600"
+                >
+                  <tr>
+                    <td style="line-height:0px;font-size:0px;mso-line-height-rule:exactly;">
+                <![endif]-->
+
+
+                <div  style="background:#ffffff;background-color:#ffffff;Margin:0px auto;max-width:600px;">
+
+                  <table
+                          align="center" border="0" cellpadding="0" cellspacing="0" role="presentation" style="background:#ffffff;background-color:#ffffff;width:100%;"
+                  >
+                    <tbody>
+                    <tr>
+                      <td
+                              style="border:7px solid #eeeeee;border-top:0px;direction:ltr;font-size:0px;padding:0px;text-align:center;vertical-align:top;"
+                      >
+                        <!--[if mso | IE]>
+                        <table role="presentation" border="0" cellpadding="0" cellspacing="0">
+
+                          <tr>
+
+                            <td
+                                    class="" style="vertical-align:top;width:600px;"
+                            >
+                        <![endif]-->
+
+                        <div
+                                class="mj-column-per-100 outlook-group-fix" style="font-size:13px;text-align:left;direction:ltr;display:inline-block;vertical-align:top;width:100%;"
+                        >
+
+                          <table
+                                  border="0" cellpadding="0" cellspacing="0" role="presentation" style="vertical-align:top;" width="100%"
+                          >
+
+                            <tr>
+                              <td
+                                      align="center" style="font-size:0px;padding:10px 25px;word-break:break-word;"
+                              >
+
+                                <div
+                                        style="font-family:Ubuntu, Helvetica, Arial, sans-serif;font-size:13px;font-weight:bold;line-height:1;text-align:center;color:#696969;"
+                                >
+                                  Weekly Roundup | July 9 - July 13, 2018
+                                </div>
+
+                              </td>
+                            </tr>
+
+                          </table>
+
+                        </div>
+
+                        <!--[if mso | IE]>
+                        </td>
+
+                        </tr>
+
+                        </table>
+                        <![endif]-->
+                      </td>
+                    </tr>
+                    </tbody>
+                  </table>
+
+                </div>
+
+
+                <!--[if mso | IE]>
+                </td>
+                </tr>
+                </table>
+                <![endif]-->
+
+                <!-- HEADER - TEMPLATE END -->
+                <!-- JIM GARRETTSON - TEMPLATE START -->
+
+                <!--[if mso | IE]>
+                <table
+                        align="center" border="0" cellpadding="0" cellspacing="0" class="" style="width:600px;" width="600"
+                >
+                  <tr>
+                    <td style="line-height:0px;font-size:0px;mso-line-height-rule:exactly;">
+                <![endif]-->
+
+
+                <div  style="background:#ffffff;background-color:#ffffff;Margin:0px auto;max-width:600px;">
+
+                  <table
+                          align="center" border="0" cellpadding="0" cellspacing="0" role="presentation" style="background:#ffffff;background-color:#ffffff;width:100%;"
+                  >
+                    <tbody>
+                    <tr>
+                      <td
+                              style="border:7px solid #eeeeee;direction:ltr;font-size:0px;padding:20px 0;text-align:center;vertical-align:top;"
+                      >
+                        <!--[if mso | IE]>
+                        <table role="presentation" border="0" cellpadding="0" cellspacing="0">
+
+                          <tr>
+
+                            <td
+                                    class="" style="width:600px;"
+                            >
+                        <![endif]-->
+
+                        <div
+                                class="mj-column-per-100 outlook-group-fix" style="font-size:0;line-height:0;text-align:left;display:inline-block;width:100%;direction:ltr;"
+                        >
+                          <!--[if mso | IE]>
+                          <table  role="presentation" border="0" cellpadding="0" cellspacing="0">
+                            <tr>
+
+                              <td
+                                      style="vertical-align:top;width:180px;"
+                              >
+                          <![endif]-->
+
+                          <div
+                                  class="mj-column-per-30 outlook-group-fix" style="font-size:13px;text-align:left;direction:ltr;display:inline-block;vertical-align:top;width:30%;"
+                          >
+
+                            <table
+                                    border="0" cellpadding="0" cellspacing="0" role="presentation" width="100%"
+                            >
+                              <tbody>
+                              <tr>
+                                <td  style="vertical-align:top;padding:0px;">
+
+                                  <table
+                                          border="0" cellpadding="0" cellspacing="0" role="presentation" style="" width="100%"
+                                  >
+
+                                    <tr>
+                                      <td
+                                              align="center" style="font-size:0px;padding:10px 25px;padding-top:0px;padding-right:0px;padding-bottom:0px;word-break:break-word;"
+                                      >
+
+                                        <table
+                                                align="center" border="0" cellpadding="0" cellspacing="0" role="presentation" style="border-collapse:collapse;border-spacing:0px;"
+                                        >
+                                          <tbody>
+                                          <tr>
+                                            <td  style="width:155px;">
+
+                                              <img
+                                                      alt="govcon_jim" height="auto" src="https://gallery.mailchimp.com/9447c61bfb9058cb4553aedbf/images/3599c14c-180e-42a6-abf2-dc49dbe725ca.jpg" style="border:0;display:block;outline:none;text-decoration:none;height:auto;width:100%;" width="155"
+                                              />
+
+                                            </td>
+                                          </tr>
+                                          </tbody>
+                                        </table>
+
+                                      </td>
+                                    </tr>
+
+                                  </table>
+
+                                </td>
+                              </tr>
+                              </tbody>
+                            </table>
+
+                          </div>
+
+                          <!--[if mso | IE]>
+                          </td>
+
+                          <td
+                                  style="vertical-align:top;width:420px;"
+                          >
+                          <![endif]-->
+
+                          <div
+                                  class="mj-column-per-70 outlook-group-fix" style="font-size:13px;text-align:left;direction:ltr;display:inline-block;vertical-align:top;width:70%;"
+                          >
+
+                            <table
+                                    border="0" cellpadding="0" cellspacing="0" role="presentation" width="100%"
+                            >
+                              <tbody>
+                              <tr>
+                                <td  style="vertical-align:top;padding:0px;">
+
+                                  <table
+                                          border="0" cellpadding="0" cellspacing="0" role="presentation" style="" width="100%"
+                                  >
+
+                                    <tr>
+                                      <td
+                                              align="center" style="font-size:0px;padding:10px 25px;word-break:break-word;"
+                                      >
+
+                                        <div
+                                                style="font-family:Ubuntu, Helvetica, Arial, sans-serif;font-size:18px;font-weight:bold;line-height:1;text-align:center;color:#696969;"
+                                        >
+                                          Executive Mosaic&rsquo;s Weekly GovCon Round-Up: $400M+ July Contracts &amp; Top 10 Stories
+                                        </div>
+
+                                      </td>
+                                    </tr>
+
+                                    <tr>
+                                      <td
+                                              align="left" style="font-size:0px;padding:10px 25px;padding-top:10%;word-break:break-word;"
+                                      >
+
+                                        <div
+                                                style="font-family:Ubuntu, Helvetica, Arial, sans-serif;font-size:14px;line-height:1;text-align:left;color:#696969;"
+                                        >
+                                          Jim Garrettson, Executive Mosaic CEO
+                                        </div>
+
+                                      </td>
+                                    </tr>
+
+                                  </table>
+
+                                </td>
+                              </tr>
+                              </tbody>
+                            </table>
+
+                          </div>
+
+                          <!--[if mso | IE]>
+                          </td>
+
+                          </tr>
+                          </table>
+                          <![endif]-->
+                        </div>
+
+                        <!--[if mso | IE]>
+                        </td>
+
+                        </tr>
+
+                        </table>
+                        <![endif]-->
+                      </td>
+                    </tr>
+                    </tbody>
+                  </table>
+
+                </div>
+
+
+                <!--[if mso | IE]>
+                </td>
+                </tr>
+                </table>
+                <![endif]-->
+                <!-- JIM GARRETTSON - TEMPLATE END -->
+                <!-- TEXT ONLY - TEMPLATE START -->
+                <!--[if mso | IE]>
+                <table align="center" border="0" cellpadding="0" cellspacing="0" class="" style="width:600px;" width="600">
+                  <tr>
+                    <td style="line-height:0px;font-size:0px;mso-line-height-rule:exactly;">
+                <![endif]-->
+                <div  style="background:#ffffff;background-color:#ffffff;Margin:0px auto;max-width:600px;">
+                  <table align="center" border="0" cellpadding="0" cellspacing="0" role="presentation" style="background:#ffffff;background-color:#ffffff;width:100%;">
+                    <tbody>
+                    <tr>
+                      <td style="border:7px solid #eeeeee;border-bottom:0px;direction:ltr;font-size:0px;padding:0px;text-align:center;vertical-align:top;"></td>
+                    </tr>
+                    </tbody>
+                  </table>
+                </div>
+                <!--[if mso | IE]>
+                </td>
+                </tr>
+                </table>
+                <![endif]-->
+                <!-- TEXT ONLY - TEMPLATE END -->
+              </div>
+              <div class="clear" style="padding-bottom: 0px !important;"></div>
+              <div class="draggableContainer " id="tag-id">
+                <div class="poc-drop-zone-text" style="display:none;padding: 10px;">
+                  <span class="poc-drop-here" style="display:none">Drop Here</span>
+                </div>
+              </div>
+              <div class="poc-combo-block poc-content-block we" id="tag-id">
+                <div class="poc-content-block-outline" id="tag-id">
+                  <ul class="dima-menu sf-menu" style="float: right;">
+                    <li style="display: flex;" class="actions-icon">
+                      <a onclick="left_dialog(this)" class="a-icon-edit" data-toggle="modal" id="edit-left" style="padding: 3px 10px 3px 10px;border: 1px solid;border-radius: 0px 0px 6px 6px;"><i class="fa fa-pencil" style="font-size: 20px;"></i></a>
+                      <a onclick="delete_element(this)" class="a-icon-del" id="delete-this" style="padding: 3px 10px 3px 10px;border: 1px solid;border-radius: 0px 0px 6px 6px;"><i class="fa fa-trash" style="font-size: 20px;"></i></a>
+                    </li>
+                  </ul>
+                </div>
+                <!-- IMAGE AT LEFT OF TEXT - TEMPLATE START -->
+
+                <!--[if mso | IE]>
+                <table
+                        align="center" border="0" cellpadding="0" cellspacing="0" class="" style="width:600px;" width="600"
+                >
+                  <tr>
+                    <td style="line-height:0px;font-size:0px;mso-line-height-rule:exactly;">
+                <![endif]-->
+
+
+                <div  style="background:#ffffff;background-color:#ffffff;Margin:0px auto;max-width:600px;">
+
+                  <table
+                          align="center" border="0" cellpadding="0" cellspacing="0" role="presentation" style="background:#ffffff;background-color:#ffffff;width:100%;"
+                  >
+                    <tbody>
+                    <tr>
+                      <td
+                              style="border:7px solid #eeeeee;border-bottom:0px;border-top:0px;direction:ltr;font-size:0px;padding:20px 0;padding-bottom:0px;padding-top:0px;text-align:center;vertical-align:top;"
+                      >
+                        <!--[if mso | IE]>
+                        <table role="presentation" border="0" cellpadding="0" cellspacing="0">
+
+                          <tr>
+
+                            <td
+                                    class="" style="vertical-align:top;width:120px;"
+                            >
+                        <![endif]-->
+
+                        <div
+                                class="mj-column-per-20 outlook-group-fix" style="font-size:13px;text-align:left;direction:ltr;display:inline-block;vertical-align:top;width:100%;"
+                        >
+
+                          <table
+                                  border="0" cellpadding="0" cellspacing="0" role="presentation" width="100%"
+                          >
+                            <tbody>
+                            <tr>
+                              <td  style="vertical-align:top;padding:5px;">
+
+                                <table
+                                        border="0" cellpadding="0" cellspacing="0" role="presentation" style="" width="100%"
+                                >
+
+                                  <tr>
+                                    <td
+                                            align="center" style="font-size:0px;padding:0px;word-break:break-word;"
+                                    >
+
+                                      <table
+                                              align="center" border="0" cellpadding="0" cellspacing="0" role="presentation" style="border-collapse:collapse;border-spacing:0px;"
+                                      >
+                                        <tbody>
+                                        <tr>
+                                          <td  style="width:110px;">
+                                            <div class="left-img-content">
+                                              <img height="auto" src="http://salesrobot.com/uploadimages/image/default/icon-placeholder-image.png" style="border:0;display:block;outline:none;text-decoration:none;height:auto;width:100%;" width="110"/>
+                                            </div>
+                                          </td>
+                                        </tr>
+                                        </tbody>
+                                      </table>
+                                    </td>
+                                  </tr>
+
+                                </table>
+
+                              </td>
+                            </tr>
+                            </tbody>
+                          </table>
+
+                        </div>
+
+                        <!--[if mso | IE]>
+                        </td>
+
+                        <td
+                                class="" style="vertical-align:top;width:480px;"
+                        >
+                        <![endif]-->
+
+                        <div
+                                class="mj-column-per-80 outlook-group-fix" style="font-size:13px;text-align:left;direction:ltr;display:inline-block;vertical-align:top;width:100%;"
+                        >
+
+                          <table
+                                  border="0" cellpadding="0" cellspacing="0" role="presentation" width="100%"
+                          >
+                            <tbody>
+                            <tr>
+                              <td  style="vertical-align:top;padding:5px;">
+
+                                <table
+                                        border="0" cellpadding="0" cellspacing="0" role="presentation" style="" width="100%"
+                                >
+
+                                  <tr>
+                                    <td
+                                            align="justify" style="font-size:0px;padding:0px;word-break:break-word;"
+                                    >
+
+                                      <div class="left-text-content"
+                                           style="font-family:Ubuntu, Helvetica, Arial, sans-serif;font-size:13px;line-height:14px;text-align:justify;color:#000000;"
+                                      >
+                                        <span style="font-family: 'times new roman', times, serif; font-size: 12pt;"><strong>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; Lorem ipsum</strong> dolor sit amet, consectetur adipiscing elit. <em>Etiam vel condimentum libero</em>,<span style="text-decoration: underline;">eget tempus mi</span>. <a href="google.com">Pellentesque</a> id luctus dolor, eu viverra mauris. <strong>Suspendisse</strong> nec venenatis lectus. Morbi fringilla fermentum malesuada. Aliquam interdum odio lorem, <span style="text-decoration: underline;">non convallis lacus</span> ultricies ac.<strong>Orci varius natoque</strong> penatibus <a href="google.com">et magnis</a> dis parturient montes, nascetur ridiculus mus. Nulla tincidunt augue non arcu scelerisque luctus sit amet in ligula.</span>
+                                      </div>
+
+                                    </td>
+                                  </tr>
+
+                                </table>
+
+                              </td>
+                            </tr>
+                            </tbody>
+                          </table>
+
+                        </div>
+
+                        <!--[if mso | IE]>
+                        </td>
+
+                        </tr>
+
+                        </table>
+                        <![endif]-->
+                      </td>
+                    </tr>
+                    </tbody>
+                  </table>
+
+                </div>
+
+
+                <!--[if mso | IE]>
+                </td>
+                </tr>
+                </table>
+                <![endif]-->
+
+                <!-- IMAGE AT LEFT OF TEXT - TEMPLATE END -->
+              </div>
+              <div class="clear" style="padding-bottom: 0px !important;"></div>
+              <div class="draggableContainer " id="tag-id">
+                <div class="poc-drop-zone-text" style="display:none;">
+                  <span class="poc-drop-here" style="display:none">Drop Here</span>
+                </div>
+              </div>
+              <div class="poc-combo-block poc-content-block we" id="tag-id">
+                <div class="poc-content-block-outline" id="tag-id">
+                  <ul class="dima-menu sf-menu" style="float: right;">
+                    <li style="display: flex;" class="actions-icon">
+                      <a onclick="right_dialog(this)" class="a-icon-edit" data-toggle="modal" id="edit-right" style="padding: 3px 10px 3px 10px;border: 1px solid;border-radius: 0px 0px 6px 6px;"><i class="fa fa-pencil" style="font-size: 20px;"></i></a>
+                      <a onclick="delete_element(this)" class="a-icon-del" style="padding: 3px 10px 3px 10px;border: 1px solid;border-radius: 0px 0px 6px 6px;"><i class="fa fa-trash" style="font-size: 20px;"></i></a>
+                    </li>
+                  </ul>
+                </div>
+                <!-- IMAGE AT RIGHT OF TEXT - TEMPLATE START -->
+
+                <!--[if mso | IE]>
+                <table
+                        align="center" border="0" cellpadding="0" cellspacing="0" class="" style="width:600px;" width="600"
+                >
+                  <tr>
+                    <td style="line-height:0px;font-size:0px;mso-line-height-rule:exactly;">
+                <![endif]-->
+
+
+                <div  style="background:#ffffff;background-color:#ffffff;Margin:0px auto;max-width:600px;">
+
+                  <table
+                          align="center" border="0" cellpadding="0" cellspacing="0" role="presentation" style="background:#ffffff;background-color:#ffffff;width:100%;"
+                  >
+                    <tbody>
+                    <tr>
+                      <td
+                              style="border:7px solid #eeeeee;border-bottom:0px;border-top:0px;direction:ltr;font-size:0px;padding:20px 0;padding-bottom:0px;padding-top:0px;text-align:center;vertical-align:top;"
+                      >
+                        <!--[if mso | IE]>
+                        <table role="presentation" border="0" cellpadding="0" cellspacing="0">
+
+                          <tr>
+
+                            <td
+                                    class="" style="vertical-align:top;width:480px;"
+                            >
+                        <![endif]-->
+
+                        <div
+                                class="mj-column-per-80 outlook-group-fix" style="font-size:13px;text-align:left;direction:ltr;display:inline-block;vertical-align:top;width:100%;"
+                        >
+
+                          <table
+                                  border="0" cellpadding="0" cellspacing="0" role="presentation" width="100%"
+                          >
+                            <tbody>
+                            <tr>
+                              <td  style="vertical-align:top;padding:5px;">
+
+                                <table
+                                        border="0" cellpadding="0" cellspacing="0" role="presentation" style="" width="100%"
+                                >
+
+                                  <tr>
+                                    <td
+                                            align="justify" style="font-size:0px;padding:0px;word-break:break-word;"
+                                    >
+
+                                      <div class="right-text-content"
+                                           style="font-family:Ubuntu, Helvetica, Arial, sans-serif;font-size:13px;line-height:14px;text-align:justify;color:#000000;"
+                                      >
+                                        <span style="font-family: 'times new roman', times, serif; font-size: 12pt;"><strong>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; Lorem ipsum</strong> dolor sit amet, consectetur adipiscing elit. <em>Etiam vel condimentum libero</em>,<span style="text-decoration: underline;">eget tempus mi</span>. <a href="google.com">Pellentesque</a> id luctus dolor, eu viverra mauris. <strong>Suspendisse</strong> nec venenatis lectus. Morbi fringilla fermentum malesuada. Aliquam interdum odio lorem, <span style="text-decoration: underline;">non convallis lacus</span> ultricies ac.<strong>Orci varius natoque</strong> penatibus <a href="google.com">et magnis</a> dis parturient montes, nascetur ridiculus mus. Nulla tincidunt augue non arcu scelerisque luctus sit amet in ligula.</span>
+                                      </div>
+
+                                    </td>
+                                  </tr>
+
+                                </table>
+
+                              </td>
+                            </tr>
+                            </tbody>
+                          </table>
+
+                        </div>
+
+                        <!--[if mso | IE]>
+                        </td>
+
+                        <td
+                                class="" style="vertical-align:top;width:120px;"
+                        >
+                        <![endif]-->
+
+                        <div
+                                class="mj-column-per-20 outlook-group-fix" style="font-size:13px;text-align:left;direction:ltr;display:inline-block;vertical-align:top;width:100%;"
+                        >
+
+                          <table
+                                  border="0" cellpadding="0" cellspacing="0" role="presentation" width="100%"
+                          >
+                            <tbody>
+                            <tr>
+                              <td  style="vertical-align:top;padding:5px;">
+
+                                <table
+                                        border="0" cellpadding="0" cellspacing="0" role="presentation" style="" width="100%"
+                                >
+
+                                  <tr>
+                                    <td
+                                            align="center" style="font-size:0px;padding:0px;word-break:break-word;"
+                                    >
+
+                                      <table
+                                              align="center" border="0" cellpadding="0" cellspacing="0" role="presentation" style="border-collapse:collapse;border-spacing:0px;"
+                                      >
+                                        <tbody>
+                                        <tr>
+                                          <td style="width:110px;">
+                                            <div class="right-img-content">
+                                              <img alt="right" height="auto" src="http://salesrobot.com/uploadimages/image/default/icon-placeholder-image.png" style="border:0;display:block;outline:none;text-decoration:none;height:auto;width:100%;" width="110"/>
+                                            </div>
+                                          </td>
+                                        </tr>
+                                        </tbody>
+                                      </table>
+
+                                    </td>
+                                  </tr>
+
+                                </table>
+
+                              </td>
+                            </tr>
+                            </tbody>
+                          </table>
+
+                        </div>
+
+                        <!--[if mso | IE]>
+                        </td>
+
+                        </tr>
+
+                        </table>
+                        <![endif]-->
+                      </td>
+                    </tr>
+                    </tbody>
+                  </table>
+
+                </div>
+
+
+                <!--[if mso | IE]>
+                </td>
+                </tr>
+                </table>
+                <![endif]-->
+
+                <!-- IMAGE AT RIGHT OF TEXT - TEMPLATE END -->
+              </div>
+              <div class="clear" style="padding-bottom: 0px !important;"></div>
+              <div class="draggableContainer " id="tag-id">
+                <div class="poc-drop-zone-text" style="display:none;">
+                  <span class="poc-drop-here" style="display:none">Drop Here</span>
+                </div>
+              </div>
+
+
+              <!--<div>
+                <textarea id="m1-tinymce">ew</textarea>
+              </div>-->
+            </div>
+          </div>
+
+
+          <table id="modals">
+            <tr>
+              <td>
+                <div class="modal fade img-modal" role="dialog">
+                  <div class="modal-dialog modal-sm">
+
+                    <!-- Modal content-->
+                    <div class="modal-content">
+                      <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                        <h4 class="modal-title">Replace Image</h4>
+                      </div>
+                      <div class="modal-body">
+                        <form role="form" id="uploadMassEmail" method="post" enctype="multipart/form-data">
+                          <div>
+                            <input type="hidden" name="div-id-img" id="div-id-img" value="">
+                            <input type='file' accept='image/*' name="profile_pic" class="profile_pic"
+                                   style="margin-bottom: 7px;"/>
+                            <img class="hover hidden pp-img" alt="image" style="width:586px;height:135px;"/>
+                          </div>
+                          <div class="hidden img_loader" style="text-align:center">
+                            <p>Please wait</p>
+                            <img src="icons/loader.gif" style="height: 2em;width: 24em;">
+                          </div>
+                          <div class="modal-footer">
+                            <button type="submit" class="submit_btn text-center btn btn-success" id="update_pic">Update
+                            </button>
+                        </form>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <div class="modal fade btn-modal" role="dialog">
+                  <div class="modal-dialog modal-sm">
+
+                    <!-- Modal content-->
+                    <div class="modal-content">
+                      <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                        <h4 class="modal-title">Button</h4>
+                      </div>
+                      <div class="modal-body">
+                        <input type="hidden" name="div-id-btn_" id="div-id-btn_" value="">
+                        <div class="clear"></div>
+                        <div class="">
+                          <div class="accordion">
+                            <div class="accordion-section">
+                              <div class="accordion-section-title">
+                                <table class="table" style="margin-bottom: -13px !important;margin-top: -13px !important;">
+                                  <tbody>
+                                  <tr>
+                                    <td style="width:30%;border: none !important;padding: 13px 0px 0px 0px;">
+                                      Text
+                                    </td>
+                                    <td style="width:70%;border: none !important;">
+                                      <div>
+                                        <input type="text" name="btn_text" class="btn_text" style="background: white !important">
+                                      </div>
+                                    </td>
+                                  </tr>
+                                  </tbody>
+                                </table>
+                              </div>
+                            </div>
+                            <div class="accordion-section">
+                              <div class="accordion-section-title">
+                                <table class="table" style="margin-bottom: -13px !important;margin-top: -13px !important;">
+                                  <tbody>
+                                  <tr>
+                                    <td style="width:30%;border: none !important;padding: 13px 0px 0px 0px;">
+                                      Link
+                                    </td>
+                                    <td style="width:70%;border: none !important;">
+                                      <div>
+                                        <input type="text" name="src_btn" class="src-btn" style="background: white !important">
+                                      </div>
+                                    </td>
+                                  </tr>
+                                  </tbody>
+                                </table>
+                              </div>
+                            </div>
+                            <div class="accordion-section">
+                              <a class="accordion-section-title" href="#accordion-1">Spacing<span style="float: right;"><i class="fa fa-chevron-down"></i></span></a>
+                              <div id="accordion-1" class="accordion-section-content">
+                                <div class="" style="">
+                                  <table width="100%">
+                                    <tbody>
+                                    <tr>
+                                      <td style="width:50%">
+                                        Top Margin
+                                      </td>
+                                      <td style="width:50%" align="center">
+                                        <div class="input-group" style="width: 70%;">
+                                          <input type="text" class="top-margin-btn" name="top-margin-btn" placeholder="" size="5px">
+                                          <span class="input-group-addon">PX</span>
+                                        </div>
+                                        <br>
+                                      </td>
+                                    </tr>
+                                    <tr>
+                                      <td style="width:50%">
+                                        Bottom Margin
+                                      </td>
+                                      <td style="width:50%" align="center">
+                                        <div class="input-group" style="width: 70%;">
+                                          <input type="text" class="bottom-margin-btn" name="bottom-margin-btn" placeholder="" size="5px">
+                                          <span class="input-group-addon">PX</span>
+                                        </div>
+                                        <br>
+                                      </td>
+                                    </tr>
+                                    </tbody>
+                                  </table>
+                                </div>
+                              </div>
+                            </div>
+                            <div class="accordion-section">
+                              <a class="accordion-section-title" href="#accordion-3">Style<span style="float: right;"><i class="fa fa-chevron-down"></i></a>
+                              <div id="accordion-3" class="accordion-section-content">
+                                <div class="" style="">
+                                  <table width="100%">
+                                    <tbody>
+                                    <tr>
+                                      <td style="width:50%">
+                                        Border
+                                      </td>
+                                      <td style="width:50%" align="center">
+                                        <div class="input-group" style="width: 70%;">
+                                          <input type="text" class="border-btn" placeholder="" size="5px">
+                                          <span class="input-group-addon">PX</span>
+                                        </div>
+                                        <br>
+                                      </td>
+                                    </tr>
+                                    <tr>
+                                      <td style="width:50%">
+                                        Border Color
+                                      </td>
+                                      <td style="width:50%" align="center">
+                                        <input type="text" class="border-color-btn">
+                                        <br>
+                                        <br>
+                                      </td>
+                                    </tr>
+                                    <tr>
+                                      <td style="width:50%">
+                                        Text Color
+                                      </td>
+                                      <td style="width:50%" align="center">
+                                        <input type="text" class="text-color-btn">
+                                        <br>
+                                        <br>
+                                      </td>
+                                    </tr>
+                                    <tr>
+                                      <td style="width:50%">
+                                        Background Color
+                                      </td>
+                                      <td style="width:50%" align="center">
+                                        <input type="text" class="background-color-btn">
+                                        <br>
+                                        <br>
+                                      </td>
+                                    </tr>
+                                    </tbody>
+                                  </table>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="modal-footer">
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <div class="modal fade right-modal" role="dialog">
+                  <div class="modal-dialog">
+
+                    <!-- kim Modal content-->
+                    <div class="modal-content">
+                      <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                        <h4 class="modal-title">Right Dialog</h4>
+                      </div>
+                      <div class="modal-body">
+                        <input type="hidden" name="div-id-btn_" id="div-id-btn_" value="">
+                        <div class="clear"></div>
+                        <div class="">
+                          <div class="accordion">
+                            <div class="accordion-section">
+                              <div class="accordion-section-title">
+                                <table class="table" style="margin-bottom: -13px !important;margin-top: -13px !important;">
+                                  <tbody>
+                                  <tr>
+                                    <td style="width:100%;border: none !important;padding: 13px 0px 0px 0px;">
+                                      <div id="accordion">
+                                        <div class="card">
+                                          <div class="card-header" id="headingOne">
+                                            <h5 class="mb-0">
+                                              <button class="btn btn-primary" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                                                Add Image
+                                              </button>
+                                            </h5>
+                                          </div>
+
+                                          <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordion" style="height:0px;">
+                                            <div class="card-body">
+                                              <textarea id="img-tinymce"><img height="auto" src="http://salesrobot.com/uploadimages/image/default/icon-placeholder-image.png" style="border:0;display:block;outline:none;text-decoration:none;height:auto;width:100px;" width="100" /></textarea>
+                                            </div>
+                                          </div>
+                                        </div>
+                                      </div>
+                                    </td>
+                                  </tr>
+                                  <tr>
+                                    <td colspan="2" style="width:30%;border: none !important;padding: 13px 0 0 0;">
+                                      Content
+                                    </td>
+                                  </tr>
+                                  <tr>
+                                    <td colspan="2">
+                                      <textarea id="m-tinymce">My Text Here</textarea>
+                                    </td>
+                                  </tr>
+                                  </tbody>
+                                </table>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="modal-footer">
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <div class="modal fade left-modal" role="dialog">
+                  <div class="modal-dialog">
+
+                    <!-- kim Modal content-->
+                    <div class="modal-content">
+                      <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                        <h4 class="modal-title">Left Dialog</h4>
+                      </div>
+                      <div class="modal-body">
+                        <input type="hidden" name="div-id-btn_" id="div-id-btn_" value="">
+                        <div class="clear"></div>
+                        <div class="">
+                          <div class="accordion">
+                            <div class="accordion-section">
+                              <div class="accordion-section-title">
+                                <table class="table" style="margin-bottom: -13px !important;margin-top: -13px !important;">
+                                  <tbody>
+                                  <tr>
+                                    <td style="width:100%;border: none !important;padding: 13px 0px 0px 0px;">
+                                      <div id="accordion">
+                                        <div class="card">
+                                          <div class="card-header" id="headingOne">
+                                            <h5 class="mb-0">
+                                              <button class="btn btn-primary" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo">
+                                                Add Image
+                                              </button>
+                                            </h5>
+                                          </div>
+
+                                          <div id="collapseTwo" class="collapse show" aria-labelledby="headingOne" data-parent="#accordion" style="height:0px;">
+                                            <div class="card-body">
+                                              <textarea id="img-tinymce-second"><img height="auto" src="http://salesrobot.com/uploadimages/image/default/icon-placeholder-image.png" style="border:0;display:block;outline:none;text-decoration:none;height:auto;width:100px;" width="100" /></textarea>
+                                            </div>
+                                          </div>
+                                        </div>
+                                      </div>
+                                    </td>
+                                  </tr>
+                                  <tr>
+                                    <td colspan="2" style="width:30%;border: none !important;padding: 13px 0 0 0;">
+                                      Content
+                                    </td>
+                                  </tr>
+                                  <tr>
+                                    <td colspan="2">
+                                      <textarea id="m-tinymce-second">My Text Here</textarea>
+                                    </td>
+                                  </tr>
+                                  </tbody>
+                                </table>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="modal-footer">
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </td>
+            </tr>
+          </table>
+        </div>
+      </div>
+    </section>
+  </div>
+</div>
+
+
+
+
+
+<script src="myStyles/jquery.easing.1.3.js"></script>
+<script src="myStyles/modernizr-2.8.2.min.js"></script>
+<script src="myStyles/imagesloaded.pkgd.min.js"></script>
+<script src="myStyles/respond.src.js"></script>
+<script src="myStyles/libs.min.js"></script>
+<script src="myStyles/mediaelement-and-player.min.js"></script>
+<script src="myStyles/video.js"></script>
+<script src="myStyles/bigvideo.js"></script>
+<script src="myStyles/gmap3.min.js"></script>
+<script src="myStyles/map.js"></script>
+<script type="text/javascript" src="myStyles/jquery.themepunch.tools.min.js"></script>
+<script type="text/javascript" src="myStyles/jquery.themepunch.revolution.min.js"></script>
+<script src="myStyles/main.js"></script>
+<script src="myStyles/bootstrap-switch.min.js"></script>
+<script src="myStyles/bootstrap.min.js"></script>
+<script src="myStyles/jquery-ui.js"></script>
+<script src="myStyles/spectrum.js"></script>
+
+<script type="text/javascript">
+  $(document).ready(function () {
+    $("[name='my-checkbox']").bootstrapSwitch();
+
+    $(".src-img").on('blur', function () {
+
+      if ($("#src-img-" + $('#div-id-img_').val()).val() == "") {
+        $('a#a-src-img' + $('#div-id-img_').val()).contents().unwrap();
+      } else {
+        if ($('a#a-src-img' + $('#div-id-img_').val()).length) {
+          $('#a-src-img' + $('#div-id-img_').val()).attr("href", $("#src-img-" + $('#div-id-img_').val()).val());
+        } else {
+          $('#' + $('#div-id-img_').val()).find("img#profile_picture_img_").wrap("<a href='" + $("#src-img-" + $('#div-id-img_').val()).val() + "' id='a-src-img" + $('#div-id-img_').val() + "' ></a>")
+        }
+      }
+    });
+
+    $(".btn_text").on('blur', function () {
+
+      if ($("#txt-btn-" + $('#div-id-btn_').val()).val() === "") {
+        $('#' + $('#div-id-btn_').val()).find("button.btn-element").text('');
+      } else {
+        $('#' + $('#div-id-btn_').val()).find("button.btn-element").text($("#txt-btn-" + $('#div-id-btn_').val()).val());
+      }
+    });
+
+    // kim
+    $(".btn_text-title").on('blur', function() {
+      if ($("#txt-btn-" + $('#div-id-btn_').val()).val() === "") {
+        $('#' + $('#div-id-btn_').val()).find("button.btn-element").text('');
+      } else {
+        document.getElementById("my-title-" + $('#div-id-btn_').val()).innerHTML = $("#txt-btn-" + $('#div-id-btn_').val()).val();
+      }
+    });
+
+    // $(".m-tinymce").on('blur', function() {
+    //   document.getElementById('right-text-content').innerHTML = tinymce.get('m-tinymce').getContent();
+    //   alert("test");
+    // });
+
+    $(".src-btn").on('blur', function () {
+
+      if ($("#src-btn-" + $('#div-id-btn_').val()).val() == "") {
+        $('a#a-src-btn' + $('#div-id-btn_').val()).contents().unwrap();
+      } else {
+        if ($('a#a-src-btn' + $('#div-id-btn_').val()).length) {
+          $('#a-src-btn' + $('#div-id-btn_').val()).attr("href", $("#src-btn-" + $('#div-id-btn_').val()).val());
+        } else {
+          $('#' + $('#div-id-btn_').val()).find("button.btn-element").wrap("<a href='" + $("#src-btn-" + $('#div-id-btn_').val()).val() + "' id='a-src-btn" + $('#div-id-btn_').val() + "' ></a>")
+        }
+      }
+    });
+
+    $(".border-btn").on('blur', function () {
+      if ($("#border-btn-" + $('#div-id-btn_').val()).val() == "") {
+        $('#' + $('#div-id-btn_').val()).find("button.btn-element").css('border');
+      } else {
+        $('#' + $('#div-id-btn_').val()).find("button.btn-element").css('border', $("#border-btn-" + $('#div-id-btn_').val()).val() + 'px solid ' + $("#border-color-btn-" + $('#div-id-btn_').val()).val());
+      }
+    });
+
+    $(".top-margin-btn").on('blur', function () {
+
+      if ($("#top-margin-btn-" + $('#div-id-btn_').val()).val() == "") {
+        $('#' + $('#div-id-btn_').val()).css("margin-top", "");
+      } else {
+        $('#' + $('#div-id-btn_').val()).css("margin-top", $("#top-margin-btn-" + $('#div-id-btn_').val()).val() + 'px');
+      }
+    });
+
+    $(".bottom-margin-btn").on('blur', function () {
+
+      if ($("#bottom-margin-btn-" + $('#div-id-btn_').val()).val() == "") {
+        $('#' + $('#div-id-btn_').val()).css("margin-bottom", "");
+      } else {
+        $('#' + $('#div-id-btn_').val()).css("margin-bottom", $("#bottom-margin-btn-" + $('#div-id-btn_').val()).val() + 'px');
+      }
+    });
+
+    drop_element();
+  });
+  //drag codes
+  $('.draggable-btn').draggable({
+    revert: function (socketObj) {
+      if (socketObj === false) {
+        return true;
+      } else {
+        return true;
+      }
+    },
+    stack: ".draggable-btn"
+  });
+  $('.draggable-divider').draggable({
+    revert: function (socketObj) {
+      if (socketObj === false) {
+        return true;
+      } else {
+        return true;
+      }
+    },
+    stack: ".draggable-divider"
+  });
+  $('.draggable-text').draggable({
+    revert: function (socketObj) {
+      if (socketObj === false) {
+        return true;
+      } else {
+        return true;
+      }
+    },
+    stack: ".draggable-text"
+  });
+  $('.draggable-img').draggable({
+    revert: function (socketObj) {
+      if (socketObj === false) {
+        return true;
+      } else {
+        return true;
+      }
+    },
+    stack: ".draggable-img"
+  });
+  $('.draggable-left').draggable({
+    revert: function (socketObj) {
+      if (socketObj === false) {
+        return true;
+      } else {
+        return true;
+      }
+    },
+    stack: ".draggable-left"
+  });
+  $('.draggable-right').draggable({
+    revert: function (socketObj) {
+      if (socketObj === false) {
+        return true;
+      } else {
+        return true;
+      }
+    },
+    stack: ".draggable-right"
+  });
+
+  //end of drag codes
+  function drop_element () {
+    $(".draggableContainer").droppable({
+      activeClass: "poc-active",
+      hoverClass: "poc-drop-zone-hover",
+      drop: function (event, ui) {
+        if (ui.draggable.attr('id') == "drag-text") {
+          $('<div class="draggableContainer " id="tag-id">' +
+             '<div class="poc-drop-zone-text" style="display:none;">' +
+             '<span class="poc-drop-here" style="display:none">Drop Here</span>' +
+             '</div>' +
+             '</div><div class="poc-texttag" id="tag-id"><p>Insert text here</p><div class="poc_outline" id="tag-id">' +
+             '<ul class="dima-menu sf-menu" style="float: right;">' +
+             '<li style="display: flex;" class="actions-icon">' +
+             '<a onclick="" class="a-icon-edit" data-toggle="modal" id="edit-txt" style="padding: 3px 10px 3px 10px;border: 1px solid;border-radius: 0px 0px 6px 6px;"><i class="fa fa-pencil" style="font-size: 20px;"></i></a>' +
+             '<a onclick="delete_element(this)" class="a-icon-del" style="padding: 3px 10px 3px 10px;border: 1px solid;border-radius: 0px 0px 6px 6px;"><i class="fa fa-trash" style="font-size: 20px;"></i></a>' +
+             '</li>' +
+             '</ul>' +
+             '</div></div>' +
+             '<div class="draggableContainer " id="tag-id">' +
+             '<div class="poc-drop-zone-text" style="display:none;">' +
+             '<span class="poc-drop-here" style="display:none">Drop Here</span>' +
+             '</div></div>')
+             .insertBefore(this);
+          $(this).remove();
+          drop_element();
+        } else if (ui.draggable.attr('id') == "drag-img") {
+          $('<div class="draggableContainer " id="tag-id">' +
+             '<div class="poc-drop-zone-text" style="display:none;">' +
+             '<span class="poc-drop-here" style="display:none">Drop Here</span>' +
+             '</div></div>' +
+             '<div class="poc_img_bg poc_imgtag undrop-poc" id="tag-id" style="width: auto;height: 135px;">' +
+             '<div class="poc_outline" id="tag-id">' +
+             '<ul class="dima-menu sf-menu" style="float: right;" id="ul-action">' +
+             '<li style="display: flex" class="actions-icon" id="li-action">' +
+             '<a onclick="img_dialog(this)" class="a-icon-edit" data-toggle="modal" id="edit-img" style="padding: 3px 10px 3px 10px;border: 1px solid;border-radius: 0px 0px 6px 6px;"><i class="fa fa-pencil" style="font-size: 20px;"></i></a>' +
+             '<a onclick="delete_element(this)" class="a-icon-del" style="padding: 3px 10px 3px 10px;border: 1px solid;border-radius: 0px 0px 6px 6px;"><i class="fa fa-trash" style="font-size: 20px;"></i></a>' +
+             '</li>' +
+             '</ul>' +
+             '</div>' +
+             '<div class="poc_img_placeholder" id="poc_img_placeholder-id" style="width: auto;height: 135px;">' +
+             '<img id="profile_picture_img_" class="hidden" src="" alt="banner" style="width: 586px;height: 135px;"/>' +
+             '</div>' +
+             '</div>' +
+             '<div class="draggableContainer " id="tag-id">' +
+             '<div class="poc-drop-zone-text" style="display:none;">' +
+             '<span class="poc-drop-here" style="display:none">Drop Here</span>' +
+             '</div></div>')
+             .insertBefore(this);
+          $(this).remove();
+          drop_element();
+        } else if (ui.draggable.attr('id') == "drag-btn") {
+          $('<div class="draggableContainer " id="tag-id">' +
+             '<div class="poc-drop-zone-text" style="display:none;">' +
+             '<span class="poc-drop-here" style="display:none">Drop Here</span>' +
+             '</div></div>' +
+             '<div class="poc-btntag" id="tag-id">' +
+             '<button class="button-block btn-element" style="cursor: pointer; text-decoration: none; line-height: 110%; border: 1px solid; padding: 12px 18px; display: block; margin-left: auto; margin-right: auto; border-radius: 6px; font-family: Arial; color: rgb(255, 255, 255); text-align: center; font-size: 16px; font-weight: normal; font-style: normal; background: rgb(90, 195, 232);">Button</button>' +
+             '<div class="poc_outline" id="tag-id">' +
+             '<ul class="dima-menu sf-menu" style="float: right;">' +
+             '<li style="display: flex;" class="actions-icon">' +
+             '<a onclick="btn_dialog(this)" class="a-icon-edit" data-toggle="modal" id="edit-btn" style="padding: 3px 10px 3px 10px;border: 1px solid;border-radius: 0px 0px 6px 6px;"><i class="fa fa-pencil" style="font-size: 20px;"></i></a>' +
+             '<a onclick="delete_element(this)" class="a-icon-del" style="padding: 3px 10px 3px 10px;border: 1px solid;border-radius: 0px 0px 6px 6px;"><i class="fa fa-trash" style="font-size: 20px;"></i></a>' +
+             '</li>' +
+             '</ul>' +
+             '</div>' +
+             '</div>' +
+             '<div class="draggableContainer " id="tag-id">' +
+             '<div class="poc-drop-zone-text" style="display:none;">' +
+             '<span class="poc-drop-here" style="display:none">Drop Here</span>' +
+             '</div></div>')
+             .insertBefore(this);
+          $(this).remove();
+          drop_element();
+        } else if (ui.draggable.attr('id') == "drag-left") {
+          $(
+             '<div class="draggableContainer " id="tag-id">'+
+             '<div class="poc-drop-zone-text" style="display:none;">'+
+             '<span class="poc-drop-here" style="display:none">Drop Here</span>'+
+             '</div></div>'+
+             '<div class="poc-combo-block poc-content-block we" id="tag-id">'+
+             '<div class="poc-content-block-outline" id="tag-id">'+
+             '<ul class="dima-menu sf-menu" style="float: right;">'+
+             '<li style="display: flex;" class="actions-icon">'+
+             '<a onclick="left_dialog(this)" class="a-icon-edit" data-toggle="modal" id="edit-left" style="padding: 3px 10px 3px 10px;border: 1px solid;border-radius: 0px 0px 6px 6px;"><i class="fa fa-pencil" style="font-size: 20px;"></i></a>'+
+             '<a onclick="delete_element(this)" class="a-icon-del" style="padding: 3px 10px 3px 10px;border: 1px solid;border-radius: 0px 0px 6px 6px;"><i class="fa fa-trash" style="font-size: 20px;"></i></a>'+
+             '</li>'+
+             '</ul>'+
+             '</div>'+
+             '<!-- IMAGE AT LEFT OF TEXT - TEMPLATE START -->'+
+             '<!--[if mso | IE]>'+
+             '<table align="center" border="0" cellpadding="0" cellspacing="0" class="" style="width:600px;" width="600">'+
+             '<tr>'+
+             '<td style="line-height:0px;font-size:0px;mso-line-height-rule:exactly;">'+
+             '<![endif]-->'+
+             '<div  style="background:#ffffff;background-color:#ffffff;Margin:0px auto;max-width:600px;">'+
+             '<table align="center" border="0" cellpadding="0" cellspacing="0" role="presentation" style="background:#ffffff;background-color:#ffffff;width:100%;">'+
+             '<tbody>'+
+             '<tr>'+
+             '<td style="border:7px solid #eeeeee;border-bottom:0px;border-top:0px;direction:ltr;font-size:0px;padding:20px 0;padding-bottom:0px;padding-top:0px;text-align:center;vertical-align:top;">'+
+             '<!--[if mso | IE]>'+
+             '<table role="presentation" border="0" cellpadding="0" cellspacing="0">'+
+             '<tr>'+
+             '<td class="" style="vertical-align:top;width:120px;">'+
+             '<![endif]-->'+
+             '<div class="mj-column-per-20 outlook-group-fix" style="font-size:13px;text-align:left;direction:ltr;display:inline-block;vertical-align:top;width:100%;">'+
+             '<table border="0" cellpadding="0" cellspacing="0" role="presentation" width="100%">'+
+             '<tbody><tr><td  style="vertical-align:top;padding:5px;">'+
+             '<table border="0" cellpadding="0" cellspacing="0" role="presentation" style="" width="100%">'+
+             '<tr><td align="center" style="font-size:0px;padding:0px;word-break:break-word;">'+
+             '<table align="center" border="0" cellpadding="0" cellspacing="0" role="presentation" style="border-collapse:collapse;border-spacing:0px;">'+
+             '<tbody><tr><td  style="width:110px;"><div class="left-img-content">'+
+             '<img height="auto" src="http://salesrobot.com/uploadimages/image/default/icon-placeholder-image.png" style="border:0;display:block;outline:none;text-decoration:none;height:auto;width:100%;" width="110"/>'+
+             '</div></td></tr></tbody></table></td></tr></table></td></tr></tbody></table></div>'+
+             '<!--[if mso | IE]>'+
+             '</td><td class="" style="vertical-align:top;width:480px;"><![endif]-->'+
+             '<div class="mj-column-per-80 outlook-group-fix" style="font-size:13px;text-align:left;direction:ltr;display:inline-block;vertical-align:top;width:100%;">'+
+             '<table border="0" cellpadding="0" cellspacing="0" role="presentation" width="100%">'+
+             '<tbody><tr><td  style="vertical-align:top;padding:5px;"><table border="0" cellpadding="0" cellspacing="0" role="presentation" style="" width="100%">'+
+             '<tr><td align="justify" style="font-size:0px;padding:0px;word-break:break-word;">'+
+             '<div class="left-text-content" style="font-family:Ubuntu, Helvetica, Arial, sans-serif;font-size:13px;line-height:14px;text-align:justify;color:#000000;">'+
+             '<span style="font-family: \'times new roman\', times, serif; font-size: 12pt;"><strong>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; Lorem ipsum</strong> dolor sit amet, consectetur adipiscing elit. <em>Etiam vel condimentum libero</em>,<span style="text-decoration: underline;">eget tempus mi</span>. <a href="google.com">Pellentesque</a> id luctus dolor, eu viverra mauris. <strong>Suspendisse</strong> nec venenatis lectus. Morbi fringilla fermentum malesuada. Aliquam interdum odio lorem, <span style="text-decoration: underline;">non convallis lacus</span> ultricies ac.<strong>Orci varius natoque</strong> penatibus <a href="google.com">et magnis</a> dis parturient montes, nascetur ridiculus mus. Nulla tincidunt augue non arcu scelerisque luctus sit amet in ligula.</span>'+
+             '</div></td></tr></table></td></tr></tbody></table></div>'+
+             '<!--[if mso | IE]>'+
+             '</td></tr></table>'+
+             '<![endif]-->'+
+             '</td></tr></tbody></table></div>'+
+             '<!--[if mso | IE]>'+
+             '</td></tr></table><![endif]--><!-- IMAGE AT LEFT OF TEXT - TEMPLATE END -->'+
+             '</div>'+
+             '<div class="clear" style="padding-bottom: 0px !important;"></div>'+
+             '<div class="draggableContainer " id="tag-id">'+
+             '<div class="poc-drop-zone-text" style="display:none;">'+
+             '<span class="poc-drop-here" style="display:none">Drop Here</span>'+
+             '</div></div>'
+          )
+             .insertBefore(this);
+          $(this).remove();
+          drop_element();
+        } else if (ui.draggable.attr('id') == "drag-right") {
+          $(
+             '<div class="draggableContainer " id="tag-id">'+
+             '<div class="poc-drop-zone-text" style="display:none;">'+
+             '<span class="poc-drop-here" style="display:none">Drop Here</span>'+
+             '</div></div>'+
+             '<div class="poc-combo-block poc-content-block we" id="tag-id">'+
+             '<div class="poc-content-block-outline" id="tag-id">'+
+             '<ul class="dima-menu sf-menu" style="float: right;">'+
+             '<li style="display: flex;" class="actions-icon">'+
+             '<a onclick="right_dialog(this)" class="a-icon-edit" data-toggle="modal" id="edit-right" style="padding: 3px 10px 3px 10px;border: 1px solid;border-radius: 0px 0px 6px 6px;"><i class="fa fa-pencil" style="font-size: 20px;"></i></a>'+
+             '<a onclick="delete_element(this)" class="a-icon-del" style="padding: 3px 10px 3px 10px;border: 1px solid;border-radius: 0px 0px 6px 6px;"><i class="fa fa-trash" style="font-size: 20px;"></i></a>'+
+             '</li>'+
+             '</ul>'+
+             '</div>'+
+             '<!-- IMAGE AT RIGHT OF TEXT - TEMPLATE START -->'+
+             '<!--[if mso | IE]>'+
+             '<table align="center" border="0" cellpadding="0" cellspacing="0" class="" style="width:600px;" width="600">'+
+             '<tr>'+
+             '<td style="line-height:0px;font-size:0px;mso-line-height-rule:exactly;">'+
+             '<![endif]-->'+
+             '<div  style="background:#ffffff;background-color:#ffffff;Margin:0px auto;max-width:600px;">'+
+             '<table align="center" border="0" cellpadding="0" cellspacing="0" role="presentation" style="background:#ffffff;background-color:#ffffff;width:100%;">'+
+             '<tbody>'+
+             '<tr>'+
+             '<td style="border:7px solid #eeeeee;border-bottom:0px;border-top:0px;direction:ltr;font-size:0px;padding:20px 0;padding-bottom:0px;padding-top:0px;text-align:center;vertical-align:top;">'+
+             '<!--[if mso | IE]>'+
+             ' <table role="presentation" border="0" cellpadding="0" cellspacing="0">'+
+             '<tr>'+
+             '<td class="" style="vertical-align:top;width:480px;">'+
+             '<![endif]-->'+
+             '<div class="mj-column-per-80 outlook-group-fix" style="font-size:13px;text-align:left;direction:ltr;display:inline-block;vertical-align:top;width:100%;">'+
+             '<table border="0" cellpadding="0" cellspacing="0" role="presentation" width="100%">'+
+             '<tbody>'+
+             '<tr>'+
+             '<td  style="vertical-align:top;padding:5px;">'+
+             '<table border="0" cellpadding="0" cellspacing="0" role="presentation" style="" width="100%">'+
+             '<tr>'+
+             '<td align="justify" style="font-size:0px;padding:0px;word-break:break-word;">'+
+             '<div class="right-text-content" style="font-family:Ubuntu, Helvetica, Arial, sans-serif;font-size:13px;line-height:14px;text-align:justify;color:#000000;">'+
+             '<span style="font-family: \'times new roman\', times, serif; font-size: 12pt;"><strong>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; Lorem ipsum</strong> dolor sit amet, consectetur adipiscing elit. <em>Etiam vel condimentum libero</em>,'+
+             '<span style="text-decoration: underline;">eget tempus mi</span>. <a href="google.com">Pellentesque</a> id luctus dolor, eu viverra mauris. <strong>Suspendisse</strong> nec venenatis lectus. Morbi fringilla fermentum malesuada. Aliquam interdum odio lorem, <span style="text-decoration: underline;">non convallis lacus</span> ultricies ac.'+
+             '<strong>Orci varius natoque</strong> penatibus <a href="google.com">et magnis</a> dis parturient montes, nascetur ridiculus mus. Nulla tincidunt augue non arcu scelerisque luctus sit amet in ligula.</span>'+
+             '</div>'+
+             '</td>'+
+             '</tr>'+
+             '</table>'+
+             '</td>'+
+             '</tr>'+
+             '</tbody>'+
+             '</table>'+
+             '</div>'+
+             '<!--[if mso | IE]>'+
+             '</td>'+
+             '<td class="" style="vertical-align:top;width:120px;">'+
+             '<![endif]-->'+
+             '<div class="mj-column-per-20 outlook-group-fix" style="font-size:13px;text-align:left;direction:ltr;display:inline-block;vertical-align:top;width:100%;">'+
+             '<table border="0" cellpadding="0" cellspacing="0" role="presentation" width="100%">'+
+             '<tbody>'+
+             '<tr>'+
+             '<td style="vertical-align:top;padding:5px;">'+
+             '<table border="0" cellpadding="0" cellspacing="0" role="presentation" style="" width="100%">'+
+             '<tr>'+
+             '<td align="center" style="font-size:0px;padding:0px;word-break:break-word;">'+
+             '<table align="center" border="0" cellpadding="0" cellspacing="0" role="presentation" style="border-collapse:collapse;border-spacing:0px;">'+
+             '<tbody>'+
+             '<tr>'+
+             '<td  style="width:110px;">'+
+             '<div class="right-img-content">'+
+             '<img height="auto" src="http://salesrobot.com/uploadimages/image/default/icon-placeholder-image.png" style="border:0;display:block;outline:none;text-decoration:none;height:auto;width:100%;" width="110" />'+
+             '</div>'+
+             '</td>'+
+             '</tr>'+
+             '</tbody>'+
+             '</table>'+
+             '</td>'+
+             '</tr>'+
+             '</table>'+
+             '</td>'+
+             '</tr>'+
+             '</tbody>'+
+             '</table>'+
+             '</div>'+
+             '<!--[if mso | IE]>'+
+             '</td>'+
+             '</tr>'+
+             '</table>'+
+             '<![endif]-->'+
+             '</td>'+
+             '</tr>'+
+             '</tbody>'+
+             '</table>'+
+             '</div>'+
+             '<!--[if mso | IE]>'+
+             '</td>'+
+             '</tr>'+
+             '</table>'+
+             '<![endif]-->'+
+             '<!-- IMAGE AT RIGHT OF TEXT - TEMPLATE END -->'+
+             '</div>'+
+             '<div class="clear" style="padding-bottom: 0px !important;"></div>'+
+             '<div class="draggableContainer " id="tag-id">'+
+             '<div class="poc-drop-zone-text" style="display:none;">'+
+             '<span class="poc-drop-here" style="display:none">Drop Here</span>'+
+             '</div></div>'
+          )
+             .insertBefore(this);
+          $(this).remove();
+          drop_element();
+        } else if (ui.draggable.attr('id') == "drag-divider") {
+          $('<div class="draggableContainer " id="tag-id">' +
+             '<div class="poc-drop-zone-text" style="display:none;">' +
+             '<span class="poc-drop-here" style="display:none">Drop Here</span>' +
+             '</div></div>' +
+             '<div class="poc-dividertag" id="tag-id" >' +
+             '<div style="height: 20px; overflow: hidden; width: 70%;"></div>' +
+             // '<hr class="styled-hr" style="width:70%;margin-bottom: 0px !important;margin-top: 0px !important;margin: auto;">' +
+             '<div style="height: 20px; overflow: hidden; width: 70%;"></div>' +
+             '<div class="poc_outline" id="tag-id">' +
+             '<ul class="dima-menu sf-menu" style="float: right;">' +
+             '<li style="display: flex;" class="actions-icon">' +
+             // '<a class="a-icon-edit" data-toggle="modal" id="edit-div" style="padding: 3px 10px 3px 10px;border: 1px solid;border-radius: 0px 0px 6px 6px;"><i class="fa fa-pencil" style="font-size: 20px;"></i></a>' +
+             '<a onclick="delete_element(this)" class="a-icon-del" style="padding: 3px 10px 3px 10px;border: 1px solid;border-radius: 0px 0px 6px 6px;"><i class="fa fa-trash" style="font-size: 20px;"></i></a>' +
+             '</li>' +
+             '</ul>' +
+             '</div>' +
+             '</div>' +
+             '<div class="draggableContainer " id="tag-id">' +
+             '<div class="poc-drop-zone-text" style="display:none;">' +
+             '<span class="poc-drop-here" style="display:none">Drop Here</span>' +
+             '</div></div>')
+             .insertBefore(this);
+          $(this).remove();
+          drop_element();
+        }
+      }
+    });
+  }
+
+  //for profile picture select image preview
+  function readURL (input) {
+    if (input.files && input.files[0]) {
+      let reader = new FileReader();
+
+      reader.onload = function (e) {
+        $('#pp-img-' + $('#div-id-img').val()).removeClass('hidden');
+        $('#pp-img-' + $('#div-id-img').val()).attr('src', e.target.result);
+      };
+
+      reader.readAsDataURL(input.files[0]);
+    }
+  }
+
+  function img_dialog (element) {
+    $('div.img_loader').addClass('hidden');
+    let div_id_ = $(element).closest("div").attr("id");
+    let div_id = $("div#" + div_id_).parent("div").attr("id");
+    $('.src-img').val('');
+    if ($('#' + div_id).find("img#profile_picture_img_").attr('src') == '') {
+      $('.img-modal').attr("id", "img-" + div_id);
+      $(".modal-body #div-id-img").val(div_id);
+      $(".modal-body .pp-img").attr("id", "pp-img-" + div_id);
+      $(".modal-body .profile_pic").attr("id", "divpp-" + div_id);
+      $('#' + div_id).find("a#edit-img").attr("data-target", "#img-" + div_id);
+
+    } else {
+      $('.img-modal-p').attr("id", "img-p" + div_id);
+      $(".modal-body #div-id-img_").val(div_id);
+      $(".modal-body .replace_img").attr("data-target", "#img-" + div_id);
+      $(".src-img").attr("id", "src-img-" + div_id);
+      if ($('a#a-src-img' + $('#div-id-img_').val()).length) {
+        $('#src-img-' + div_id).val($('#a-src-img' + div_id).attr('href'));
+      }
+      $('#' + div_id).find("a#edit-img").attr("data-target", "#img-p" + div_id);
+      $(".border-color-img").spectrum({
+        allowEmpty: true,
+        change: function (color) {
+          alert(color.toHexString());
+        }
+      });
+    }
+  }
+
+  // kim
+  function title_dialog(element) {
+    let div_id_ = $(element).closest("div").attr("id");
+    let div_id = $("div#" + div_id_).parent("div").attr("id");
+    $('.title-modal').attr("id", "title-" + div_id);
+    $('.my-title').attr("id", "my-title-" + div_id);
+    $(".modal-body #div-id-btn_").val(div_id);
+
+    $(".btn_text-title").attr("id", "txt-btn-" + div_id);
+    $('#' + div_id).find("a#edit-title").attr("data-target", "#title-" + div_id);
+
+    $('#txt-btn-' + div_id).val(document.getElementById("my-title-" + div_id).innerHTML);
+  }
+
+  function right_dialog(element) {
+    let div_id_ = $(element).closest("div").attr("id");
+    let div_id = $("div#" + div_id_).parent("div").attr("id");
+    $('.right-modal').attr("id", "right-" + div_id);
+
+    $('.right-text-content').attr("id", "right-text-content-" + div_id_);
+    $('#right-text-content-' + div_id_).attr('class', '');
+    $('#m-tinymce').attr("data-id", ""+div_id_);
+    let content = document.getElementById('right-text-content-'+div_id_).innerHTML;
+    tinymce.get('m-tinymce').setContent(content);
+
+    $('.right-img-content').attr("id", "right-img-content-" + div_id_);
+    $('#right-img-content-' + div_id_).attr('class', '');
+    $('#img-tinymce').attr("data-id", ""+div_id_);
+    let content2 = document.getElementById('right-img-content-'+div_id_).innerHTML;
+    tinymce.get('img-tinymce').setContent(content2);
+
+    $('#' + div_id).find("a#edit-right").attr("data-target", "#right-" + div_id);
+  }
+
+  function left_dialog(element) {
+    let div_id_ = $(element).closest("div").attr("id");
+    let div_id = $("div#" + div_id_).parent("div").attr("id");
+    $('.left-modal').attr("id", "left-" + div_id);
+
+    $('.left-text-content').attr("id", "left-text-content-" + div_id_);
+    $('#left-text-content-' + div_id_).attr('class', '');
+    $('#m-tinymce-second').attr("data-id", ""+div_id_);
+    let content = document.getElementById('left-text-content-'+div_id_).innerHTML;
+    tinymce.get('m-tinymce-second').setContent(content);
+
+    $('.left-img-content').attr("id", "left-img-content-" + div_id_);
+    $('#left-img-content-' + div_id_).attr('class', '');
+    $('#img-tinymce-second').attr("data-id", ""+div_id_);
+    let content2 = document.getElementById('left-img-content-'+div_id_).innerHTML;
+    tinymce.get('img-tinymce-second').setContent(content2);
+
+    $('#' + div_id).find("a#edit-left").attr("data-target", "#left-" + div_id);
+  }
+
+  function btn_dialog (element) {
+    let div_id_ = $(element).closest("div").attr("id");
+    let div_id = $("div#" + div_id_).parent("div").attr("id");
+    $('.btn_text').val('');
+    $('.src-btn').val('');
+    $('.btn-modal').attr("id", "btn-" + div_id);
+    $(".modal-body #div-id-btn_").val(div_id);
+    $(".btn_text").attr("id", "txt-btn-" + div_id);
+    $(".border-btn").attr("id", "border-btn-" + div_id);
+    $(".src-btn").attr("id", "src-btn-" + div_id);
+    $(".text-color-btn").attr("id", "text-color-btn-" + div_id);
+    $(".border-color-btn").attr("id", "border-color-btn-" + div_id);
+    $(".background-color-btn").attr("id", "background-color-btn-" + div_id);
+    $(".top-margin-btn").attr("id", "top-margin-btn-" + div_id);
+    $(".bottom-margin-btn").attr("id", "bottom-margin-btn-" + div_id);
+    $('#txt-btn-' + div_id).val($('#' + div_id).find("button.btn-element").text());
+    if ($('a#a-src-btn' + $('#div-id-btn_').val()).length) {
+      $('#src-btn-' + div_id).val($('#a-src-btn' + div_id).attr('href'));
+    }
+    $('#border-btn-' + div_id).val($('#' + div_id).find("button.btn-element").css('border').substring(0, $('#' + div_id).find("button.btn-element").css('border').length - ($('#' + div_id).find("button.btn-element").css('border-color').length + 9)));
+    $('#top-margin-btn-' + div_id).val($('#' + div_id).css('margin-top').substring(0, $('#' + div_id).css('margin-top').length - 2));
+    $('#bottom-margin-btn-' + div_id).val($('#' + div_id).css('margin-bottom').substring(0, $('#' + div_id).css('margin-bottom').length - 2));
+    $('#text-color-btn-' + div_id).val($('#' + div_id).find("button.btn-element").css('color'));
+    $('#border-color-btn-' + div_id).val($('#' + div_id).find("button.btn-element").css('border-color'));
+    $('#background-color-btn-' + div_id).val($('#' + div_id).find("button.btn-element").css('background-color'));
+
+    $('#' + div_id).find("a#edit-btn").attr("data-target", "#btn-" + div_id);
+    $(".background-color-btn").spectrum({
+      allowEmpty: true,
+      showInput: true,
+      preferredFormat: 'rgb',
+      change: function (color) {
+        if (color == null) {
+          $('#' + $('#div-id-btn_').val()).find("button.btn-element").css('background', 'rgb(90, 195, 232)');
+        } else {
+          $('#' + $('#div-id-btn_').val()).find("button.btn-element").css('background', color.toHexString());
+        }
+      }
+    });
+    $(".text-color-btn").spectrum({
+      allowEmpty: true,
+      showInput: true,
+      preferredFormat: 'rgb',
+      change: function (color) {
+        if (color == null) {
+          $('#' + $('#div-id-btn_').val()).find("button.btn-element").css('color', 'rgb(255, 255, 255)');
+        } else {
+          $('#' + $('#div-id-btn_').val()).find("button.btn-element").css('color', color.toHexString());
+        }
+      }
+    });
+
+    $(".border-color-btn").spectrum({
+      allowEmpty: true,
+      showInput: true,
+      preferredFormat: 'rgb',
+      change: function (color) {
+        if (color == null) {
+          $('#' + $('#div-id-btn_').val()).find("button.btn-element").css('border-color', 'rgb(255, 255, 255)');
+        } else {
+          $('#' + $('#div-id-btn_').val()).find("button.btn-element").css('border-color', color.toHexString());
+        }
+      }
+    });
+  }
+
+  $(".modal-body .replace_img").click(function () {
+    $('#img-p' + $('#div-id-img_').val()).modal('hide');
+  });
+
+  function delete_element (element) {
+    const div_id_ = $(element).closest("div").attr("id");
+    const div_id = $("div#" + div_id_).parent("div").attr("id");
+    if ($('#' + div_id).prev().hasClass('draggableContainer'))
+      $('#' + div_id).prev().remove();
+    if ($('#' + div_id).next().next().hasClass('draggableContainer')) {
+      $('#' + div_id).next().remove();
+      $('#' + div_id).next().remove();
+    } else if ($('#' + div_id).next().hasClass('draggableContainer'))
+      $('#' + div_id).next().remove();
+
+
+    $(
+       '<div class="draggableContainer ui-droppable" id="tag-id">' +
+       '<div class="poc-drop-zone-text" style="display:none;">' +
+       '<span class="poc-drop-here" style="display:none">Drop Here</span>' +
+       '</div>' +
+       '</div>'
+    ).insertBefore("#" + div_id);
+    drop_element();
+    $('#' + div_id).remove();
+  }
+
+  $("input#divpp-"+$('#div-id-img').val()).change(function(){
+    readURL(this);
+  });
+</script>
+
+<script>
+  $("form#uploadMassEmail").on('submit', function (e) {
+    e.preventDefault();
+    $('div.img_loader').removeClass('hidden');
+    let formData = new FormData($(this)[0]);
+    $.ajax({
+      url: '../update_Profilepic/update_mass_email?var_page=mass_email',
+      type: 'POST',
+      data: formData,
+      success: function (data) {
+
+        let res = jQuery.parseJSON(data);
+
+        if (res.success) {
+
+          var source_img = "uploads/mass_email/" + res.message;
+          $('#' + $('#div-id-img').val()).find("img#profile_picture_img_").removeClass('hidden');
+          $('#' + $('#div-id-img').val()).removeClass('poc_img_bg');
+          $('#' + $('#div-id-img').val()).find("div#poc_img_placeholder-id").removeClass('poc_img_placeholder');
+          $('#' + $('#div-id-img').val()).find("img#profile_picture_img_").attr('src', source_img);
+          $('#img-' + $('#div-id-img').val()).modal('hide');
+          $('.profile_pic').val("");
+          //alert(source_img);
+          //window.location.reload();
+
+        } else {
+          console.log(res.message);
+          bootbox.alert(res.message);
+
+          document.getElementById('loading_pic').style.display = "none";
+        }
+
+      },
+      cache: false,
+      contentType: false,
+      processData: false
+    });
+
+    //return false;
+  });
+</script>
+
+<script>
+
+
+  setInterval(function(){
+    // tinyMCE.get('m1-tinymce').setContent(document.getElementById('w-template').innerHTML);
+    const my_content = document.getElementById('w-template').innerHTML;
+    const src_btn = my_content.search('tag-id');
+    const src_btn2 = my_content.search('right-text-content-tag-id');
+    const src_btn3 = my_content.search('right-img-content-tag-id');
+
+    const src_btn4 = my_content.search('left-text-content-tag-id');
+    const src_btn5 = my_content.search('left-img-content-tag-id');
+    // if(src_btn !== -1) {
+    //   const rand = Math.floor(Math.random() * 1000000000000) + 1;
+    //   const e = document.getElementById('tag-id');
+    //   try {e.id = rand;}
+    //   catch(err) {e.id = rand;}
+    // }
+    const rand = Math.floor(Math.random() * 1000000000000) + 1;
+
+    if(src_btn > 0) {
+      const e = document.getElementById('tag-id');
+      e.id = rand;
+    }
+
+    if(src_btn2 > 0) {
+      const e = document.getElementById('right-text-content-tag-id');
+      e.id = rand;
+    }
+    if(src_btn3 > 0) {
+      const rand = Math.floor(Math.random() * 1000000000000) + 1;
+      const e = document.getElementById('right-img-content-tag-id');
+      e.id = "right-img-content-"+rand;
+    }
+
+    if(src_btn4 > 0) {
+      const e = document.getElementById('left-text-content-tag-id');
+      e.id = rand;
+    }
+    if(src_btn5 > 0) {
+      const rand = Math.floor(Math.random() * 1000000000000) + 1;
+      const e = document.getElementById('left-img-content-tag-id');
+      e.id = "left-img-content-"+rand;
+    }
+
+
+    $('.ui-helper-hidden-accessible').attr("style", "display:none;");
+
+
+  }, 10);
+</script>
+</body>
+</html>
